@@ -72,7 +72,6 @@
         {:keys [url table config]} options
         json-data (add-hash (get-data url))
         postgres (create-postgres-db config)]
-    (println (get-data url))
     (cond
       (true? (table-created? postgres table))
         (println "table already created: going to insert new data now...")
